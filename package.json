@@ -10,7 +10,7 @@
   "scripts": {
     "client-install": "npm install --prefix client",
     "build": "npm run client-install --prefix client && npm run build --prefix client",
-    "start": "concurrently \"mongod --dbpath=data\" \"nodemon server.js\" \"npm start --prefix client\"",
+    "start": "concurrently \"nodemon server.js\" \"npm start --prefix client\"",
     "server": "nodemon server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
