@@ -34,8 +34,8 @@ function Courses() {
                         <h1 className='text-secondary text-xl'>{courses[selectedItemIndex].title}</h1>
                         <p className='text-white'>{courses[selectedItemIndex].description}</p>
                     </div>
-                </div>
                 <img src={courses[selectedItemIndex].image} alt='' className='h-44 w-80'/>
+                </div>
             </div>
         </div>
     )
