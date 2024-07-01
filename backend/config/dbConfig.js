@@ -1,6 +1,14 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-mongoose.connect(process.env.mongo_url, { useNewUrlParser: true, useUnifiedTopology: true });
+// Usar la URL de conexión de MongoDB desde las variables de entorno
+const mongoURI = process.env.mongo_url;
+
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,  // Puedes probar eliminar esto si sigue dando problemas
+  useUnifiedTopology: true,  // Puedes probar eliminar esto si sigue dando problemas
+  ssl: true,
+  tlsInsecure: true  // Desactiva la validación de certificados SSL (solo para pruebas)
+});
 
 const connection = mongoose.connection;
 
