@@ -7,12 +7,12 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware para redirigir HTTP a HTTPS
-app.use((req, res, next) => {
-    if (req.headers['x-forwarded-proto'] !== 'https') {
-        return res.redirect(`https://${req.headers.host}${req.url}`);
-    }
-    next();
-});
+// app.use((req, res, next) => {
+//     if (req.headers['x-forwarded-proto'] !== 'https') {
+//         return res.redirect(`https://${req.headers.host}${req.url}`);
+//     }
+//     next();
+// });
 
 // Rutas
 const portfolioRoute = require('./routes/portfolioRoute');
