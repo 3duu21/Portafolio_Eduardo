@@ -1,12 +1,18 @@
 const express = require('express');
-const https = require('https');
-const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 const dbConfig = require('./config/dbConfig');
 
 const app = express();
 const port = process.env.PORT || 5000;
+
+// Middleware para redirigir HTTP a HTTPS
+app.use((req, res, next) => {
+    if (req.headers['x-forwarded-proto'] !== 'https') {
+        return res.redirect(`https://${req.headers.host}${req.url}`);
+    }
+    next();
+});
 
 // Rutas
 const portfolioRoute = require('./routes/portfolioRoute');
@@ -23,13 +29,7 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-// Certificados SSL
-const sslOptions = {
-    key: fs.readFileSync('/path/to/privkey.pem'),
-    cert: fs.readFileSync('/path/to/fullchain.pem')
-};
-
-// Crear servidor HTTPS
-https.createServer(sslOptions, app).listen(port, () => {
+// Iniciar el servidor
+app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
