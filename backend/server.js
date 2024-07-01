@@ -1,23 +1,35 @@
-const express = require('express')
-const app = express()
-require("dotenv").config()
-const dbConfig = require("./config/dbConfig")
-const port = process.env.PORT || 5000
+const express = require('express');
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
+require('dotenv').config();
+const dbConfig = require('./config/dbConfig');
 
-const portfolioRoute = require("./routes/portfolioRoute")
+const app = express();
+const port = process.env.PORT || 5000;
 
-app.use(express.json())
+// Rutas
+const portfolioRoute = require('./routes/portfolioRoute');
 
-app.use("/api/portfolio", portfolioRoute)
-const path = require("path")
+// Middleware
+app.use(express.json());
+app.use('/api/portfolio', portfolioRoute);
 
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static(path.join(__dirname, "client/build")))
-//     app.get("*", (req, res) => {
-//         res.sendFile(path.join(__dirname, "client/build/index.html"))
-//     })
-// }
+// Configuración de producción
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client/build')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client/build/index.html'));
+    });
+}
 
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`)
-})
+// Certificados SSL
+const sslOptions = {
+    key: fs.readFileSync('/path/to/privkey.pem'),
+    cert: fs.readFileSync('/path/to/fullchain.pem')
+};
+
+// Crear servidor HTTPS
+https.createServer(sslOptions, app).listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
