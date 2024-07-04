@@ -4,14 +4,10 @@ const mongoose = require('mongoose');
 const mongoURI = process.env.mongo_url;
 
 mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useNewUrlParser: true,  // Puedes probar eliminar esto si sigue dando problemas
+  useUnifiedTopology: true,  // Puedes probar eliminar esto si sigue dando problemas
   ssl: true,
   tlsInsecure: true  // Desactiva la validación de certificados SSL (solo para pruebas)
-}).then(() => {
-  console.log('Connected to database with SSL but without strict validation');
-}).catch((err) => {
-  console.error('Error connecting to database:', err);
 });
 
 const connection = mongoose.connection;
