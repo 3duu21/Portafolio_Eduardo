@@ -1,6 +1,4 @@
 const express = require('express');
-const https = require('https');
-const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 const dbConfig = require('./config/dbConfig');
@@ -17,13 +15,12 @@ app.use('/api/portfolio', portfolioRoute);
 
 // Configuración de producción
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, 'client/build')));
+    app.use(express.static(path.join(__dirname, '../client/build')));
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'client/build/index.html'));
+        res.sendFile(path.join(__dirname, '../client/build/index.html'));
     });
 }
- 
 
-app.listen(port,()=>{
-    console.log(`Server listening on port ${port}`)
-})
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
