@@ -15,9 +15,12 @@ app.use('/api/portfolio', portfolioRoute);
 
 // Configuración de producción
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')));
+    // Ruta para servir archivos estáticos
+    app.use(express.static(path.join(__dirname, 'client/build')));
+
+    // Ruta para todas las demás solicitudes
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/build/index.html'));
+        res.sendFile(path.join(__dirname, 'client/build/index.html'));
     });
 }
 
