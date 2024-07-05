@@ -20,7 +20,7 @@ app.use(cors(corsOptions));
 
 // Rutas
 const portfolioRoute = require('./routes/portfolioRoute');
-app.use('/api/portfolio', portfolioRoute);
+app.use('/https://portafolio-eduardo-66pp.onrender.com/api/portfolio', portfolioRoute);
 
 // Configuración de producción
 app.get('*', (req, res) => {
