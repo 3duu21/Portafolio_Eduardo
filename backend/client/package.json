@@ -48,6 +48,6 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "tailwindcss": "^3.4.1"
   },
-  "proxy": "http://localhost:5000/"
+  "proxy": "https://portafolio-eduardo-66pp.onrender.com"
 }
 
