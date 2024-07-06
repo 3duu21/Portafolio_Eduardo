@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import cv from '../../img/CV-EduardoZapata2024AcutalizadoSinRenta.pdf'
 
 function Intro() {
     const { loading, portfolioData } = useSelector((state) => state.root)
@@ -12,7 +13,10 @@ function Intro() {
             <h1 className='text-7xl sm:text-3xl text-white font-semibold'>{caption || ''}</h1>
             <p className='text-xl text-white w-2/3'>{description || ''}</p>
 
-            <a className='border-2 border-tertiary text-tertiary px-10 py-3 rounded' href='#contacto'>Contacto</a>
+            <div className='flex gap-2'>
+                <a className='border-2 border-tertiary text-tertiary text-white px-10 py-3 rounded' href='#contacto'>Contacto</a>
+                <a className='border-2 border-tertiary text-tertiary text-white px-10 py-3 rounded' href={cv} download={cv}>Curriculum</a>
+            </div>
         </div>
     )
 }

@@ -29,12 +29,14 @@ function Courses() {
                 </div>
 
                 <div className='flex items-center justify-center gap-10 sm:flex-col'>
-                    
+
                     <div className='flex flex-col gap-5'>
                         <h1 className='text-secondary text-xl'>{courses[selectedItemIndex].title}</h1>
                         <p className='text-white'>{courses[selectedItemIndex].description}</p>
+                        <a className='text-white font-light text-lg underline' href={courses[selectedItemIndex].link}>Certificado</a>
+
                     </div>
-                <img src={courses[selectedItemIndex].image} alt='' className='h-44 w-80'/>
+                    <img src={courses[selectedItemIndex].image} alt='' className='h-44 w-80' />
                 </div>
             </div>
         </div>

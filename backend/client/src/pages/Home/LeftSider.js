@@ -13,7 +13,7 @@ function LeftSider() {
                     <a href='https://www.linkedin.com/in/eduardo-zapata-moya-a6667a1b4/'>
                         <i class="ri-linkedin-fill text-gray-400 text-xl mb-2"></i>
                     </a>
-                    <a href='/'>
+                    <a href='https://github.com/3duu21'>
                         <i class="ri-github-fill text-gray-400 text-xl mb-2">
 
                         </i>

@@ -18,7 +18,7 @@ app.use('/api/portfolio', portfolioRoute);
 // Servir la aplicación React estática en producción
 if (process.env.NODE_ENV === 'production') {
   // Servir archivos estáticos desde la carpeta build
-  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.use(express.static(path.join(__dirname, 'client', 'build')));
 
   // Configurar Express para manejar SPA: redirigir todas las demás rutas a index.html
   app.get('*', (req, res) => {

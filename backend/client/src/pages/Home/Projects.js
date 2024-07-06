@@ -32,6 +32,7 @@ function Projects() {
                     <div className='flex flex-col gap-5'>
                         <h1 className='text-secondary text-xl'>{projects[selectedItemIndex].title}</h1>
                         <p className='text-white'>{projects[selectedItemIndex].description}</p>
+                        <a className='text-white font-light text-lg underline' href={projects[selectedItemIndex].link}>Demo</a>
                     </div>
                 </div>
             </div>
