@@ -1,42 +1,35 @@
 const express = require('express');
-const cors = require('cors'); // Importar cors
-const https = require('https');
-const fs = require('fs');
+const cors = require('cors');
 const path = require('path');
+const mongoose = require('mongoose');
 require('dotenv').config();
-// const dbConfig = require('./config/dbConfig');
-// import { fileURLToPath } from 'url';
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors({
-  origin: 'https://portafolio-eduardo.onrender.com' // Permitir solicitudes desde tu frontend
-}));
+app.use(cors());
 app.use(express.json());
 
-// Rutas
+// Rutas API
 const portfolioRoute = require('./routes/portfolioRoute');
-const { default: mongoose } = require('mongoose');
-
 app.use('/api/portfolio', portfolioRoute);
 
-// Configuración de producción
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/client/build/index.html'));
-})
+// Servir la aplicación React estática en producción
+if (process.env.NODE_ENV === 'production') {
+  // Servir archivos estáticos desde la carpeta build
+  app.use(express.static(path.join(__dirname, 'client/build')));
 
-// Use the client app
-app.use(express.static(path.join(__dirname, '/client/build')))
+  // Configurar Express para manejar SPA: redirigir todas las demás rutas a index.html
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
-// Connecting to mongo db using mongoose
-mongoose
-    .connect(process.env.mongo_url, {dbName : "mern-portafolio-eduardo"})
-    .then(() => {
-        console.log("Connected to DB successfully")
-
-        // Listening to request if db connection is successful
-        app.listen({port}, () => console.log(`Listening to port ${port}`))
-    })
-    .catch((err) => console.log(err))
+// Conectar a MongoDB usando Mongoose
+mongoose.connect(process.env.mongo_url, { dbName: "mern-portafolio-eduardo", useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("Conectado a la base de datos MongoDB");
+    app.listen(port, () => console.log(`Servidor corriendo en puerto ${port}`));
+  })
+  .catch((err) => console.error(err));
