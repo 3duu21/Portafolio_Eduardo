@@ -12,10 +12,11 @@ import Login from './pages/Admin/Login'
 function App() {
   const { loading, portfolioData, reloadData } = useSelector((state) => state.root)
   const dispatch = useDispatch()
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading())
-      const response = await axios.get('/api/portfolio/get-portfolio-data')
+      const response = await axios.get(`${backendUrl}/api/portfolio/get-portfolio-data`)
       dispatch(SetPortfolioData(response.data))
       dispatch(ReloadData(false))
       dispatch(HideLoading())
