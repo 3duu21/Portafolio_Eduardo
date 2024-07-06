@@ -15,7 +15,7 @@ const { default: mongoose } = require('mongoose');
 
 // Middleware
 app.use(express.json());
-app.use('https://portafolio-eduardo-66pp.onrender.com/api/portfolio', portfolioRoute);
+app.use('/api/portfolio', portfolioRoute);
 
 // Configuración de producción
 app.get('*', (req, res) => {
