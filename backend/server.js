@@ -15,7 +15,7 @@ const { default: mongoose } = require('mongoose');
 
 // Middleware
 app.use(express.json());
-app.use('https://portafolio-eduardo-66pp.onrender.com/api/portfolio', portfolioRoute);
+app.use('/api/portfolio', portfolioRoute);
 
 // Configuración de producción
 app.get('*', (req, res) => {
@@ -24,12 +24,6 @@ app.get('*', (req, res) => {
 
 //Use the client app
 app.use(express.static(path.join(__dirname, '/client/build')))
-
- 
-// app.listen(port, () => {
-//     console.log(`Server listening on port ${port}`)
-// })
-
 
 //Connecting to mongo db using mongoose
 mongoose
