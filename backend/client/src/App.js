@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import axios from 'axios'
@@ -13,17 +13,21 @@ function App() {
   const { loading, portfolioData, reloadData } = useSelector((state) => state.root)
   const dispatch = useDispatch()
   const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+  console.log('Backend URL:', backendUrl);  // Añadir esta línea para verificar la URL
+  
   const getPortfolioData = async () => {
     try {
-      dispatch(ShowLoading())
-      const response = await axios.get(`${backendUrl}/api/portfolio/get-portfolio-data`)
-      dispatch(SetPortfolioData(response.data))
-      dispatch(ReloadData(false))
-      dispatch(HideLoading())
+      dispatch(ShowLoading());
+      const response = await axios.get(`${backendUrl}/api/portfolio/get-portfolio-data`);
+      dispatch(SetPortfolioData(response.data));
+      dispatch(ReloadData(false));
+      dispatch(HideLoading());
     } catch (error) {
-      dispatch(HideLoading())
+      dispatch(HideLoading());
+      console.error('Error:', error);
     }
-  }
+  };
 
   useEffect(() => {
     if (!portfolioData) {
