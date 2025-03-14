@@ -1,0 +1,377 @@
+{
+    "challenges_total": 0,
+    "languages_total": 13,
+    "files_total": 59,
+    "users_total": 48,
+    "challenges_ranking": [],
+    "languages_ranking": [
+        {
+            "order": 1,
+            "name": "home",
+            "count": 9,
+            "percentage": "15.25"
+        },
+        {
+            "order": 2,
+            "name": "src",
+            "count": 8,
+            "percentage": "13.56"
+        },
+        {
+            "order": 3,
+            "name": "admin",
+            "count": 8,
+            "percentage": "13.56"
+        },
+        {
+            "order": 4,
+            "name": "client",
+            "count": 6,
+            "percentage": "10.17"
+        },
+        {
+            "order": 5,
+            "name": "public",
+            "count": 6,
+            "percentage": "10.17"
+        },
+        {
+            "order": 6,
+            "name": "backend",
+            "count": 5,
+            "percentage": "8.47"
+        },
+        {
+            "order": 7,
+            "name": "img",
+            "count": 5,
+            "percentage": "8.47"
+        },
+        {
+            "order": 8,
+            "name": "components",
+            "count": 3,
+            "percentage": "5.08"
+        },
+        {
+            "order": 9,
+            "name": "resources",
+            "count": 3,
+            "percentage": "5.08"
+        },
+        {
+            "order": 10,
+            "name": "redux",
+            "count": 2,
+            "percentage": "3.39"
+        },
+        {
+            "order": 11,
+            "name": "models",
+            "count": 2,
+            "percentage": "3.39"
+        },
+        {
+            "order": 12,
+            "name": "config",
+            "count": 1,
+            "percentage": "1.69"
+        },
+        {
+            "order": 13,
+            "name": "routes",
+            "count": 1,
+            "percentage": "1.69"
+        }
+    ],
+    "users_ranking": [
+        {
+            "order": 1,
+            "name": "index",
+            "count": 5,
+            "languages": 4
+        },
+        {
+            "order": 2,
+            "name": ".gitignore",
+            "count": 2,
+            "languages": 2
+        },
+        {
+            "order": 3,
+            "name": "package-lock",
+            "count": 2,
+            "languages": 2
+        },
+        {
+            "order": 4,
+            "name": "package",
+            "count": 2,
+            "languages": 2
+        },
+        {
+            "order": 5,
+            "name": "courses",
+            "count": 2,
+            "languages": 2
+        },
+        {
+            "order": 6,
+            "name": "experiences",
+            "count": 2,
+            "languages": 2
+        },
+        {
+            "order": 7,
+            "name": "projects",
+            "count": 2,
+            "languages": 2
+        },
+        {
+            "order": 8,
+            "name": "app",
+            "count": 2,
+            "languages": 1
+        },
+        {
+            "order": 9,
+            "name": ".env",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 10,
+            "name": "readme",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 11,
+            "name": "postcss.config",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 12,
+            "name": "favicon",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 13,
+            "name": "logo192",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 14,
+            "name": "logo512",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 15,
+            "name": "manifest",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 16,
+            "name": "robots",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 17,
+            "name": "app.test",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 18,
+            "name": "header",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 19,
+            "name": "loader",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 20,
+            "name": "sectiontitle",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 21,
+            "name": "cv-eduardozapata2024acutalizadosinrenta",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 22,
+            "name": "cursoselenium",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 23,
+            "name": "softwaretestingdesde0",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 24,
+            "name": "imgselenium",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 25,
+            "name": "serviciosmaee",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 26,
+            "name": "logo",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 27,
+            "name": "adminabout",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 28,
+            "name": "admincontact",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 29,
+            "name": "admincourses",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 30,
+            "name": "adminexperiences",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 31,
+            "name": "adminintro",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 32,
+            "name": "adminprojects",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 33,
+            "name": "login",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 34,
+            "name": "about",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 35,
+            "name": "contact",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 36,
+            "name": "footer",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 37,
+            "name": "intro",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 38,
+            "name": "leftsider",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 39,
+            "name": "rootslice",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 40,
+            "name": "store",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 41,
+            "name": "reportwebvitals",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 42,
+            "name": "setuptests",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 43,
+            "name": "tailwind.config",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 44,
+            "name": "dbconfig",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 45,
+            "name": "portfoliomodel",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 46,
+            "name": "usermodel",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 47,
+            "name": "portfolioroute",
+            "count": 1,
+            "languages": 1
+        },
+        {
+            "order": 48,
+            "name": "server",
+            "count": 1,
+            "languages": 1
+        }
+    ]
+}
