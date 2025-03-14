@@ -4,6 +4,9 @@ on:
   push:
     branches: [  main  ]
 
+  # Para ejecutar cada cierta hora / schedule:
+     # Ejemplo para correrlo cada cierta hora. / - cron: '0 0 * * *'
+
 jobs: 
   build:
     runs-on: ubuntu-latest
