@@ -1,0 +1,31 @@
+name: Stats
+
+on: 
+  push:
+    branches: [  main  ]
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Run Script
+        run: npm ./backend/stats.js
+
+      - name: Commit and Push changes
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update Stats
+          commit_user_name: 3duCode Github Actions
+          commit_author: Eduardo Zapata
